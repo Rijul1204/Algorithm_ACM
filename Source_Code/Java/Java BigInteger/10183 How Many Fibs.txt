@@ -1,0 +1,67 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args){
+
+        Scanner in=new Scanner(System.in);
+        BigInteger[] fib=fib(5009);
+
+        while(in.hasNext()){
+            String a=in.next();
+            String b=in.next();
+
+            BigInteger n1=new BigInteger(a);
+            BigInteger n2=new BigInteger(b);
+
+            if(n1.equals(BigInteger.ZERO)&&n2.equals(BigInteger.ZERO)) break;
+
+            int count1=0,flag=0;
+           // System.out.println(n1);
+
+            for(int i=1;i<=510;i++){
+               // System.out.println(fib[i]);
+               // System.out.println(flag);
+                
+                if(fib[i].compareTo(n1)==1||fib[i].compareTo(n1)==0){
+                   // count1=1;
+                    //System.out.println(count1);
+                    flag=1;
+                }
+                //System.out.println(fib[i]);
+               // System.out.println(count1);
+                if(fib[i].compareTo(n2)==0){
+                    count1++;
+                   // System.out.println("paisi");
+                    break;
+                }
+                if(fib[i].compareTo(n2)==1) break;
+                if(flag==1) count1++;
+                
+            }
+
+            System.out.println(count1);
+          
+        }
+
+    }
+    public static BigInteger[] fib(int n){
+        BigInteger[] fib=new BigInteger[n+1];
+
+        fib[0]=BigInteger.ONE;
+        fib[1]=BigInteger.ONE;
+
+        for(int i=2;i<=n;i++){
+            fib[i]=fib[i-1].add(fib[i-2]);
+        }
+
+        return fib;
+
+    }
+
+}

@@ -1,0 +1,62 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+import java.lang.*;
+import java.awt.*;
+import java.lang.*;
+
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException{
+
+        //Scanner in= new Scanner(System.in);
+        BufferedReader in1=new BufferedReader(new InputStreamReader(System.in));
+        String st;
+        int i;
+
+        String first[]=new String[1000];
+        String second[]=new String[1000];
+        StringBuffer s,temp;
+        String s1,s2;
+
+        while((st=in1.readLine())!=null){
+            //temp=in1.nextLine();
+            int n=Integer.parseInt(st);
+            if(n==0) break;
+            for(i=1;i<=n;i++){
+                first[i]=in1.readLine();
+                second[i]=in1.readLine();
+                //System.out.println(first[i]);
+            }
+            //StringBuffer s1=new StringBuffer();
+            s1=in1.readLine();
+            //System.out.println(s);
+            s=new StringBuffer("");
+            temp=new StringBuffer("");
+
+            s.append(s1);
+           int ind;
+
+           for(i=1;i<=n;i++){
+               while(true){
+                   ind=s.indexOf(first[i]);
+                   if(ind==-1) break;
+                   //temp=s.replace(first[i],second[i]);
+                    s.replace(ind,ind+first[i].length(),second[i]);  
+               }
+           }
+
+           System.out.println(s);
+
+
+        }
+
+
+    }
+        
+        
+
+}

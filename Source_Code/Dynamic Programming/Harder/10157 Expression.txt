@@ -1,0 +1,64 @@
+
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    static BigInteger[][] dp=new BigInteger[350][160];
+    static int[][] fl=new int[350][160];
+    
+    public static void main(String[] args){
+
+        Scanner in=new Scanner(System.in);
+        for(int i=0;i<310;i++){
+            for(int j=0;j<155;j++){
+                fl[i][j]=0;
+            }
+        }
+
+        while(in.hasNextInt()){
+
+            int n=in.nextInt();
+            int d;
+            if(in.hasNextInt()){
+                 d=in.nextInt();
+            }
+            else break;
+
+            BigInteger res=cal(1,n,d);
+            BigInteger res1=cal(1,n,d-1);
+            res=res.subtract(res1);
+            System.out.println(res);
+
+        }
+
+    }
+    public static BigInteger cal(int b,int e,int d){
+
+        if(d<0) return BigInteger.ZERO;
+        if(b>e){
+            return BigInteger.ONE;
+        }
+
+        if(fl[e-b+1][d]==1) return dp[e-b+1][d];
+        fl[e-b+1][d]=1;
+
+        int i=0;
+        BigInteger ret,ret1;
+        ret=BigInteger.ZERO;
+
+        for(i=b+1;i<=e;i+=2){
+           ret1=cal(b+1,i-1,d-1);
+           ret1=ret1.multiply(cal(i+1,e,d));
+           ret=ret.add(ret1);           
+        }
+
+        return dp[e-b+1][d]=ret;
+
+    }
+
+}

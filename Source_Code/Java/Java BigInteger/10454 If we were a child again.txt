@@ -1,0 +1,56 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args){
+
+        Scanner in=new Scanner(System.in);
+       // BigInteger[] fib=fib(5100);
+        int t=1;
+
+        while(in.hasNext()){
+
+            String a=in.next();
+            String b=in.next();
+            String c=in.next();
+            BigInteger n1=new BigInteger(a);
+            BigInteger n2=new BigInteger(c);
+            char ch=b.charAt(0);
+            if(ch=='/'){
+                BigInteger n3=n1.divide(n2);
+                System.out.println(n3);
+
+            }
+            else if(ch=='%'){
+                BigInteger n3=n1.mod(n2);
+                System.out.println(n3);
+
+            }
+          
+        }
+
+    }
+/*
+    public static BigInteger[] fib(int n){
+        BigInteger[] fib=new BigInteger[n+1];
+
+        fib[0]=BigInteger.ONE;
+        fib[1]=BigInteger.ONE.add(BigInteger.ONE);
+
+        for(int i=2;i<=n;i++){
+            fib[i]=fib[i-1].add(fib[i-2]);
+        }
+
+        return fib;
+
+    }
+ *
+ */
+
+
+}

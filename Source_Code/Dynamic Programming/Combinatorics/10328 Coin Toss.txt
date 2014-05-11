@@ -1,0 +1,77 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args){
+
+        Scanner in=new Scanner(System.in);
+       // BigInteger[] fib=fib(5100);
+        int t=1;
+
+        while(in.hasNext()){
+
+            int n=in.nextInt();
+            int a=in.nextInt();
+
+            BigInteger[] fib=gen(n,a);
+
+            BigInteger sum,num;
+            num=BigInteger.ONE.add(BigInteger.ONE);
+            sum=num.pow(n);
+            sum=sum.subtract(fib[n]);
+
+            for(int i=1;i<=n;i++){
+               // System.out.print("i->");
+               // System.out.println(fib[i]);
+            }
+            System.out.println(sum);
+        }
+
+    }
+    public static BigInteger[] gen(int n,int k){
+
+        BigInteger[] fib=new BigInteger[n+10];
+
+        BigInteger n1=BigInteger.ONE.add(BigInteger.ONE);
+
+         int i,j;
+
+         for(i=1;i<=k;i++){
+               fib[i]=n1.pow(i);
+         }
+         fib[k]=fib[k].subtract(BigInteger.ONE);
+
+         for(i=k+1;i<=n;i++){
+             fib[i]=BigInteger.ZERO;
+             for(j=i-1;j>=i-k;j--){
+                 fib[i]=fib[i].add(fib[j]);
+             }
+         }
+
+         return fib;
+
+    }
+/*
+    public static BigInteger[] fib(int n){
+        BigInteger[] fib=new BigInteger[n+1];
+
+        fib[0]=BigInteger.ONE;
+        fib[1]=BigInteger.ONE.add(BigInteger.ONE);
+
+        for(int i=2;i<=n;i++){
+            fib[i]=fib[i-1].add(fib[i-2]);
+        }
+
+        return fib;
+
+    }
+ *
+ */
+
+
+}

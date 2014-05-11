@@ -1,0 +1,7 @@
+Case 1: 8
+Case 2: 3
+Case 3: 3
+Case 4: 3
+Case 5: 3
+Case 6: 2
+Case 7: 3

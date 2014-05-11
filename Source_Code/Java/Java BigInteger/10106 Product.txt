@@ -1,0 +1,23 @@
+import java.io.*;
+import java.math.*;
+
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args)throws IOException {
+
+        BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+        String a,b;
+        while((a=in.readLine())!=null){
+            b=in.readLine();
+            BigInteger n=new BigInteger(a);
+            BigInteger n1=new BigInteger(b);
+            BigInteger n2=n.multiply(n1);
+            System.out.println(n2);
+
+        }
+    }
+
+}

@@ -1,0 +1,56 @@
+import java.math.*;
+import java.util.*;
+import java.io.*;
+
+public class Main {
+
+    static BigInteger[][]dp=new BigInteger[10100][100];
+    static int[][]vis=new int[10100][100];
+    static String a,b;
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int i,j,k,l,test,t=1;
+
+        Scanner in=new Scanner(System.in);
+        test=in.nextInt();
+        while(test!=0){
+            test--;
+            a=in.next();
+            b=in.next();
+            //System.out.println(a);
+            //System.out.println(b);
+            k=a.length();
+            l=b.length();
+            for(i=0;i<=k;i++){
+                for(j=0;j<=l;j++){
+                    vis[i][j]=0;
+                }
+            }
+            System.out.println(cal(k-1,l-1));
+        }
+    }
+
+    public static BigInteger cal(int i,int j){
+
+        if(j<0) return BigInteger.ONE;
+        if(i<0) return BigInteger.ZERO;
+        
+
+        if(vis[i][j]==1) return dp[i][j];
+        vis[i][j]=1;
+
+        BigInteger ret=BigInteger.ZERO;
+        ret=cal(i-1,j);
+        if(a.charAt(i)==b.charAt(j)){
+            ret=ret.add(cal(i-1,j-1));
+        }
+
+        return dp[i][j]=ret;
+
+    }
+
+}
+

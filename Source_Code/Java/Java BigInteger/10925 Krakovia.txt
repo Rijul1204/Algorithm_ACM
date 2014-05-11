@@ -1,0 +1,60 @@
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args){
+
+        Scanner in=new Scanner(System.in);
+       // BigInteger[] fib=fib(5100);
+        int t=1;
+
+        while(in.hasNext()){
+
+            int n=in.nextInt();
+            int n1=in.nextInt();
+            if(n==0&&n1==0) break;
+            String a;
+            BigInteger Sum;
+            Sum=BigInteger.ZERO;
+            for(int i=1;i<=n;i++){
+                a=in.next();
+                BigInteger num=new BigInteger(a);
+                Sum=Sum.add(num);                
+            }
+
+            BigInteger res;
+            res=Sum.divide(BigInteger.valueOf(n1));
+            System.out.println("Bill #" +t +" costs " +Sum +": each friend should pay " +res);
+            System.out.println();
+            t++;
+            
+
+             
+          
+        }
+
+    }
+/*
+    public static BigInteger[] fib(int n){
+        BigInteger[] fib=new BigInteger[n+1];
+
+        fib[0]=BigInteger.ONE;
+        fib[1]=BigInteger.ONE.add(BigInteger.ONE);
+
+        for(int i=2;i<=n;i++){
+            fib[i]=fib[i-1].add(fib[i-2]);
+        }
+
+        return fib;
+
+    }
+ *
+ */
+
+
+}
