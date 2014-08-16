@@ -1,3 +1,9 @@
+/*
+Author  :  Rashedul Hasan Rijul  .
+Problem :  Loj 1222 Gift Packing .
+Algo    :  Min-cost Flow         .
+*/
+
 #include<stdio.h>
 #include<string.h>
 #include<queue>
@@ -59,7 +65,7 @@ int main(){
 	scanf("%d",&test);
 
 	while(test--){
-		
+
 		memset(prev,-1,sizeof(prev));
 		scanf("%d",&n);
 		tot=1;
@@ -73,7 +79,7 @@ int main(){
 			}
 		}
 		tot=k;
-		
+
 		for(i=1;i<=n;i++){
 			add(0,i,0,1);
 		    add(i,0,0,0);
@@ -82,16 +88,16 @@ int main(){
 	    	add(2*n+1,n+i,0,0);
 		}
 
-		
+
 
 		for(i=1;i<tot;i++){
 			k=paths[i].a; l=paths[i].b; j=paths[i].c;
 			add(k,l,-j,1);
 			add(l,k,j,0);
 		}
-		
+
 		ford(0,2*n+1);
-		
+
 
 	}
 
@@ -119,7 +125,7 @@ bool dij(int s){
 
 	while(!pq.empty()){
 		temp=pq.top(); pq.pop();
-		j=temp.no; 
+		j=temp.no;
 
 		for(i=prev[j];i!=-1;i=edges[i].next){
 			k=edges[i].v;
@@ -135,7 +141,7 @@ bool dij(int s){
 
 	return d[2*n+1]!=inf;
 
-	
+
 
 }
 

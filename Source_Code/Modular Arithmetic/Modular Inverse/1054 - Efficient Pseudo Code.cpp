@@ -1,3 +1,9 @@
+/*
+Author  : Rashedul Hasan Rijul (Silent_coder).
+Problem : LOJ 1054 ( Efficient Pseudo Code).
+Algo    : Modular Inverse,Extended Euclid.
+*/
+
 #include<stdio.h>
 #include<string.h>
 #include<math.h>
@@ -41,7 +47,7 @@ int main(){
     int i,test,t=1;
     ii n,m,k,j;
 
-    printf("%d\n",mod_inv(2,321555123));
+    printf("%d\n",mod_inv(2,mod));
 
     gen(maxm-10);
     take(maxm-10);

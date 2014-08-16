@@ -122,9 +122,11 @@ int chck3(tri t,point p){
 
     point p1=t.p1,p2=t.p2,p3=t.p3;
 
+    //  check  for boundary........
     if(iseq(cross(p,p1,p2),0)) return 0;
     if(iseq(cross(p,p2,p3),0)) return 0;
     if(iseq(cross(p,p1,p3),0)) return 0;
+    // .........
 
     if(cross(p,p1,p2)*cross(p3,p1,p2)<0) return 0;
     if(cross(p,p2,p3)*cross(p1,p2,p3)<0) return 0;

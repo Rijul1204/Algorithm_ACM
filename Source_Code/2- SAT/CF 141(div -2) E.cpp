@@ -73,6 +73,7 @@ struct two_sat{
             else if(op==0) XOR(u,v);
         }
     }
+
     void make_reverse(){
 
         for(int i=1;i<=nn;i++){
@@ -146,6 +147,7 @@ struct two_sat{
 	}
 };
 two_sat T_sat;
+
 //  finish..........
 
 vector<int>res;

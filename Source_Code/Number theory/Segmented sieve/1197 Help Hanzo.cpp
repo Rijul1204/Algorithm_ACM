@@ -1,3 +1,8 @@
+/*
+Author  : Rashedul Hasan Rijul
+Problem : LOJ 1197 Help Hanzo
+Algo    : Segmented Seive
+*/
 #include<stdio.h>
 #include<math.h>
 #include<string.h>

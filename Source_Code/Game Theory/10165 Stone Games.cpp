@@ -1,3 +1,9 @@
+/*
+Author  : Rashedul Hasan Rijul .
+problem : Uva - 10165 ( stone Games) .
+Algo    : Nim .
+*/
+
 #include<stdio.h>
 #include<string.h>
 
@@ -14,13 +20,10 @@ int main(){
 	while(scanf("%d",&n)==1){
 		if(!n) break;
 
-		ii ans;
+		ii ans=0;
 		for(i=1;i<=n;i++){
 			scanf("%d",&k);
-			if(i==1){
-				ans=k;
-			}
-			else ans=ans^k;
+			ans=ans^k;
 		}
 		if(ans){
 			printf("Yes\n");

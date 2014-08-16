@@ -1,3 +1,9 @@
+/*
+Author  : Rashedul Hasan Rijul ( Silent_coder) .
+Problem : LOJ 1183 ( Computing Fase Average) .
+Algo    : Segment_Tree .
+*/
+
 #include<stdio.h>
 #include<string.h>
 
@@ -23,7 +29,7 @@ int main(){
 	int i,j,k,l,v,test,t=1;
 
 //	freopen("in.txt","r",stdin);
-	
+
 	scanf("%d",&test);
 
 	while(test--){
@@ -31,9 +37,9 @@ int main(){
 		scanf("%d %d",&n,&q);
 
 		init(1,1,n);
-		
+
 		printf("Case %d:\n",t++);
-		
+
 		for(i=1;i<=q;i++){
 			scanf("%d %d %d",&j,&k,&l);
 			k++; l++;
@@ -46,7 +52,7 @@ int main(){
 				j=l-k+1;
 				k=gcd(v,j);
 				if((j/k)!=1) printf("%d/%d\n",v/k,j/k);
-				else printf("%d\n",v/k);			
+				else printf("%d\n",v/k);
 			}
 		}
 
@@ -60,7 +66,7 @@ int query(int node,int b,int e,int x,int y){
 	if(b==e){
 		return m[node].sum;
 	}
-	
+
 	int k=e-b+1,l;
 	if(b==x&&e==y){
 		return m[node].sum;
@@ -75,7 +81,7 @@ int query(int node,int b,int e,int x,int y){
 		update(left,b,mid,b,mid,l);
 		update(right,mid+1,e,mid+1,e,l);
 	}
-	
+
 	if(y<=mid){
 		return query(left,b,mid,x,y);
 	}
@@ -85,9 +91,9 @@ int query(int node,int b,int e,int x,int y){
 	else{
 		ret+=query(left,b,mid,x,mid);
 		ret+=query(right,mid+1,e,mid+1,y);
-	}	
+	}
 
-	return ret;	
+	return ret;
 }
 
 void update(int node,int b,int e,int x,int y,int v){
@@ -97,7 +103,7 @@ void update(int node,int b,int e,int x,int y,int v){
 		m[node].sum=v;
 		return ;
 	}
-	
+
 	int k=e-b+1,l;
 	if(b==x&&e==y){
 		m[node].sum=k*v; m[node].fl=1;
@@ -113,7 +119,7 @@ void update(int node,int b,int e,int x,int y,int v){
 		update(left,b,mid,b,mid,l);
 		update(right,mid+1,e,mid+1,e,l);
 	}
-	
+
 	if(y<=mid){
 		update(left,b,mid,x,y,v);
 	}
@@ -123,10 +129,10 @@ void update(int node,int b,int e,int x,int y,int v){
 	else{
 		update(left,b,mid,x,mid,v);
 		update(right,mid+1,e,mid+1,y,v);
-	}	
+	}
 
 	m[node].sum=m[left].sum+m[right].sum;
-	
+
 }
 
 void init(int node,int b,int e){
@@ -144,5 +150,5 @@ void init(int node,int b,int e){
 	init(right,mid+1,e);
 
 	m[node].fl=m[node].sum=0;
-	
+
 }

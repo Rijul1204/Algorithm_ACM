@@ -1,3 +1,9 @@
+/*
+Author  : Rashedul Hasan Rijul.
+Problem : Loj 1400 ( Employment).
+Algo    : Stable Marriage problem.
+*/
+
 #include<stdio.h>
 #include<vector>
 #include<string.h>
@@ -7,23 +13,24 @@ using namespace std;
 
 vector<int>v[maxm];
 int left[maxm],right[maxm],mat[maxm][maxm],matt[maxm][maxm],n,col[maxm];
+// mat=left matrix , matt= right matrix ..
 void match(int n);
 bool dfs(int s);
 
 int main(){
-	
+
 	int i,j,k,l,test,t=1;
 
 	//freopen("in.txt","r",stdin);
-	
+
 	scanf("%d",&test);
 
 	while(test--){
-		
+
 		scanf("%d",&n);
 
 		for(i=0;i<=n;i++){
-			v[i].clear();			
+			v[i].clear();
 		}
 
 		for(i=1;i<=n;i++){
@@ -90,7 +97,7 @@ bool dfs(int s){
 		if(left[i]==-1){
 			left[i]=s;
 			right[s]=i;
-			return 1;		
+			return 1;
 		}
 
 		else{

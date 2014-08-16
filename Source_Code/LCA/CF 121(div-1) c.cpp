@@ -1,6 +1,7 @@
 /*
-Author: Rashedul Hasan Rijul.
-Algo  : LCA O(sqrt) per query..
+Author : Rashedul Hasan Rijul.
+Algo   : LCA O(sqrt) per query..
+Problem: Codeforces div-1 round 121( problem c)
 */
 #include<stdio.h>
 #include<string.h>

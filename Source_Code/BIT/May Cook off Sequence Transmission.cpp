@@ -1,3 +1,8 @@
+/*
+Author : Rashedul Hasan Rijul
+Algo   : BIT
+*/
+
 #include<stdio.h>
 #include<iostream>
 #include<string.h>

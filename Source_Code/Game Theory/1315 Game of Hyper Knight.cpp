@@ -1,3 +1,9 @@
+/*
+Author  : Rashedul Hasan Rijul .
+problem : Light oj 1315 ( Game of Hyper Knight) .
+Algo    : Sprunge-Grundy Theory.
+*/
+
 #include<stdio.h>
 #include<string.h>
 #include<set>
@@ -12,7 +18,7 @@ int dy[]={-2,-3,-2,-1,1,-1};
 int cal(int i,int j);
 
 int main(){
-	
+
 	int i,j,k,l,test,t=1,n;
 
 //	freopen("in.txt","r",stdin);
@@ -59,6 +65,6 @@ int cal(int i,int j){
 	while(s.find(ret)!=s.end()){
 		ret++;
 	}
-	
+
 	return dp[i][j]=ret;
 }

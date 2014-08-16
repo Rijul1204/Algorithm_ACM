@@ -8,7 +8,7 @@ using namespace std;
 
 int n;
 
-///Gaussian  Elimination...............................................
+//Gaussian  Elimination...............................................
 
 #define eps (1e-9)
 #define iseq(a,b) (fabs(a-b)<eps)

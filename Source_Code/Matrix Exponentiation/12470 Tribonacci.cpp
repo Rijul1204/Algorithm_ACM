@@ -1,3 +1,9 @@
+/*
+Author  : Rashedul Hasan Rijul (Silent_coder).
+Problem : Uva 12470 (Tribonacci).
+Algo    : Matrix Exponentiation .
+*/
+
 #include<stdio.h>
 #include<string.h>
 #include<math.h>

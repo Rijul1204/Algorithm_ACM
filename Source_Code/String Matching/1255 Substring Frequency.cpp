@@ -1,3 +1,9 @@
+/*
+Author  : Rashedul Hasan Rijul.
+Problem : Loj 1255  ( Substring Frequency ).
+Algo    : KMP .
+*/
+
 #include<stdio.h>
 #include<string.h>
 
@@ -21,7 +27,7 @@ int main(){
 
 		scanf("%s",s);
 		scanf("%s",p);
-		j=kmp(); 
+		j=kmp();
 		printf("Case %d: %d\n",t++,kmp());
 
 	}
@@ -45,14 +51,14 @@ int kmp(){
 			k=pre[k];
 		}
 	}
-	
+
 	return ret;
 }
 
 void prefix(){
 
 	int i,j,k,l;
-	
+
 	l=strlen(p);
 	pre[1]=0;
 	k=0;

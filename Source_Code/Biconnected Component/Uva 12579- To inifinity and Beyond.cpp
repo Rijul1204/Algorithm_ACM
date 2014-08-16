@@ -1,3 +1,9 @@
+/*
+Author : Rashedul Hasan Rijul
+Problem: Uva 12579 ( To infinity and Beyond )
+Algo   : Biconnected Component,Binary Search , Bipartite Matching
+*/
+
 #include<stdio.h>
 #include<string.h>
 #include<vector>

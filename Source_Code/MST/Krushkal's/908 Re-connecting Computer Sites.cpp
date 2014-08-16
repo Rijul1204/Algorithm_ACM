@@ -1,6 +1,15 @@
+/*
+Author : Rashedul Hasan Rijul
+Algo   : Minimum Spanning Tree
+problem : uva 908 (re-connecting Computer Sites)
+*/
+
 #include<stdio.h>
 #include<algorithm>
 using namespace std;
+
+#define maxe 1001100
+#define maxm 1001100
 
 struct edge{
 	int u;
@@ -8,8 +17,8 @@ struct edge{
 	int w;
 };
 
-edge edges[1001100];
-int pre[1001100];
+edge edges[maxe];
+int pre[maxm];
 
 bool comp(edge a,edge b){
 	return a.w>b.w;

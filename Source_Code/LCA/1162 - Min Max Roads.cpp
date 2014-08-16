@@ -1,3 +1,9 @@
+/*
+Author : Rashedul Hasan Rijul.
+Algo   : LCA O(sqrt) per query..
+Problem: Min-Max Roads (light oj )
+*/
+
 #include<stdio.h>
 #include<string.h>
 #include<vector>
@@ -13,7 +19,9 @@ struct node{
     node(int a,int b){ min1=a; max1=b;}
 };
 
+// n=no of node, nr = sqrt of max heigt.....
 int n,nr,T[maxm],L[maxm],costT[maxm],P[maxm],costP1[maxm],costP2[maxm];
+// v for storing graph , w =weight of the edge ......
 vector<int>v[maxm],w[maxm];
 
 int mini(int a,int b){
@@ -22,8 +30,11 @@ int mini(int a,int b){
 int maxi(int a,int b){
     if(a>b) return a; return b;
 }
+// for calculate P .........
 void dfs(int node,int val1,int val2);
+// for calculate L and T.
 void dfs1(int s,int lev,int pre);
+// finding LCA .....
 node lca(int x,int y);
 
 int main(){
@@ -98,6 +109,7 @@ node lca(int x,int y){
         }
     }
 
+    // Lca node = x
 	return ret;
 
 }

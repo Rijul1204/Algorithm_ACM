@@ -1,3 +1,9 @@
+/*
+Author  : Rashedul Hasan Rijul.
+Problem : Uva 10480 Sabotage  .
+Algo    : Max-flow/Min-cut .
+*/
+
 #include<stdio.h>
 #include<vector>
 #include<string.h>
@@ -34,9 +40,9 @@ int mini(int a,int b){
 }
 
 int main(){
-	
+
 	int i,j,k,l,test,t=1;
-	
+
 //	freopen("in.txt","r",stdin);
 
 	while(scanf("%d %d",&n,&m)==2){
@@ -51,7 +57,7 @@ int main(){
 			mat[k][l]=mat[l][k]=j;
 			cap[k][l]=cap[l][k]=1;
 		}
-		
+
 		mat[2][n+1]=inf;
 		mat[n+1][2]=inf;
 
@@ -68,9 +74,9 @@ int bfs(int s,int t){
 	memset(pre,-1,sizeof(pre));
 	memset(col,0,sizeof(col));
 	int i,j,k,l;
-	
+
 	while(!q.empty()) q.pop();
-	
+
 	q.push(s);
 	col[s]=1;
 
@@ -95,7 +101,7 @@ int bfs(int s,int t){
 		path=mini(path,mat[prev][wh]);
 		wh=prev;
 	}
-	
+
 	wh=t;
 	while(pre[wh]!=-1){
 		prev=pre[wh];
@@ -115,7 +121,7 @@ void ford(int s,int t){
 	while(1){
 		int fl=bfs(s,t);
 		if(fl) ret+=fl;
-		else break;		
+		else break;
 	}
 //	printf("ret - %d\n",ret);
 
@@ -130,5 +136,5 @@ void ford(int s,int t){
 		}
 	}
 
-	
+
 }
