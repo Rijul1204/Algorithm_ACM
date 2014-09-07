@@ -63,7 +63,8 @@ struct two_sat{
         G[inv(u)].push_back(inv(v));
         G[inv(v)].push_back(inv(u));
     }
-    // problem  Dependent.......
+
+    // Have to change for every problem ( problem  Dependent )
     void build_graph(){
         int u,v,op;
         nn=n+n;
@@ -94,6 +95,7 @@ struct two_sat{
     }
     void find_solution(vector<int>&res){
         int i,j,i_p;
+        res.clear();
         for(i=1;i<=comp;i++){
             if(soln[i]==-1){
                 soln[i]=0;
