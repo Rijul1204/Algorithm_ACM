@@ -117,6 +117,7 @@ struct two_sat{
             }
         }
     }
+
     void build_scc(){
         make_reverse();
         int i;
